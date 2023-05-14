@@ -1,2 +1,2 @@
-# login-page
-Tela de login feita em React e Typescript, via Vite
+## Tela de login
+Tela de login feita em React e Typescript
