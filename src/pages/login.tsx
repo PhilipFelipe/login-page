@@ -1,12 +1,12 @@
 import { Button, Spacer } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import LoginInput from "./components/input/loginInput";
-import PasswordInput from "./components/input/passwordInput";
-import { IFormValues } from "./components/input/loginInput";
+import BaseInput from "../components/input/baseInput";
+import PasswordInput from "../components/input/passwordInput";
+import { IFormValues } from "../components/input/baseInput";
 import "./App.css";
 
-function App() {
+function LoginPage() {
   const { register, handleSubmit } = useForm<IFormValues>();
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     alert(JSON.stringify(data));
@@ -15,7 +15,7 @@ function App() {
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="name-form-container">
-          <LoginInput
+          <BaseInput
             placeholder="Nome"
             label="Usuário"
             register={register}
@@ -24,7 +24,7 @@ function App() {
         </div>
         <Spacer height="4" />
         <div className="email-form-container">
-          <LoginInput
+          <BaseInput
             placeholder="E-mail"
             label="E-mail"
             register={register}
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default LoginPage;

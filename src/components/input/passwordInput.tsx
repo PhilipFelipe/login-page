@@ -1,11 +1,11 @@
 import { Input, InputGroup, InputRightElement, Button } from "@chakra-ui/react";
 import { Path, UseFormRegister } from "react-hook-form";
 
-import "./loginInput.css";
-import { IFormValues } from "./loginInput";
+import "./baseInput.css";
+import { IFormValues, LoginInputProps } from "./baseInput";
 import React from "react";
 
-type PasswordInputProps = {
+type PasswordInputProps = LoginInputProps & {
   placeholder: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
@@ -16,7 +16,7 @@ export default function PasswordInput({
   label,
   placeholder,
   register,
-  required,
+  required = true,
 }: PasswordInputProps) {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
