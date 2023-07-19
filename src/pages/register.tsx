@@ -1,5 +1,6 @@
-import { Button, Divider, Spacer } from "@chakra-ui/react";
+import { Button, Spacer, Text } from "@chakra-ui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 
 import BaseInput from "../components/input/baseInput";
 import PasswordInput from "../components/input/passwordInput";
@@ -70,6 +71,14 @@ function RegisterPage() {
         >
           Registrar
         </Button>
+        <Text marginTop={"10px"} display={"flex"}>
+          Já possui uma conta?
+          <NavLink to="/">
+            <Text marginLeft={"5px"} color={"green"}>
+              Entre agora.
+            </Text>
+          </NavLink>
+        </Text>
       </form>
     </div>
   );
