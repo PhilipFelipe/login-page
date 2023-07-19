@@ -1,26 +1,28 @@
 import { Input } from "@chakra-ui/react";
 import { Path, UseFormRegister } from "react-hook-form";
 
-import "./loginInput.css";
+import "./baseInput.css";
 
 export interface IFormValues {
   Usuário: string;
   "E-mail": string;
   Senha: string;
+  "Confirmar senha": string;
+  "Data de nascimento": string;
 }
 
-type LoginInputProps = {
+export type LoginInputProps = {
   placeholder: string;
   label: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
   required: boolean;
 };
 
-export default function LoginInput({
+export default function BaseInput({
   label,
   placeholder,
   register,
-  required,
+  required = false,
 }: LoginInputProps) {
   return (
     <div className="input-container">
